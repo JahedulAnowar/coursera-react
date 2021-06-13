@@ -20,7 +20,7 @@ class DishDetail extends Component {
                 <div>
                     <div className="col-12 col-md-5 m-1">
                         <Card>
-                            <CardImg width="100%"  src={dish.image} alt={dish.name} />
+                            <CardImg width="100%" src={dish.image} alt={dish.name} />
                             <CardBody>
                                 <CardTitle>{dish.name}</CardTitle>
                                 <CardText>{dish.description}</CardText>
@@ -51,7 +51,8 @@ class DishDetail extends Component {
                     <ul className="list-unstyled">
                         <li>{c.comment}</li>
                         <br/>
-                        <li>-- {c.author} , {(new Date(c.date)).toLocaleDateString("en-US",{year: 'numeric', month: 'short', day: 'numeric' })}</li>
+                        {/* <li>-- {c.author} , {(new Date(c.date)).toLocaleDateString("en-US",{year: 'numeric', month: 'short', day: 'numeric' })}</li> */}
+                        <li>-- {c.author} , {new Intl.DateTimeFormat("en-US",{year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(c.date)))}</li>
                         <br/>
                     </ul>
                 )
