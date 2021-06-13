@@ -3,11 +3,19 @@ import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 
 
 class Menu extends Component {
-    // constructor(props){
-    //     super(props);
-    // }
+    constructor(props) 
+    {
+        super(props);
+        console.log("Menu Component constructor was invoked");
+    }
 
-    render() {
+    componentDidMount(){
+        console.log("Menu Component componentDidMount was invoked");
+    }
+
+    render() 
+    {
+        console.log("Menu Component render was invoked");
         // render a list of dishes
         const menu = this.props.dishes.map((dish) => {
             return (
@@ -24,7 +32,7 @@ class Menu extends Component {
         });
 
         return (
-            <div className="container">
+            <div class="container">
                 <div className="row">
                     {menu}
                 </div>

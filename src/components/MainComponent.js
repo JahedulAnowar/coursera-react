@@ -7,7 +7,8 @@ import { Component } from 'react';
 
 
 class Main extends Component {
-    constructor(props){
+    constructor(props) 
+    {
         super(props);
         this.state = {
             dishes: DISHES,
@@ -20,7 +21,8 @@ class Main extends Component {
         this.setState({ selectedDish: dishId });                                                                    // ony track dishId not the whole dish
     }
 
-    render(){
+    render() 
+    {
         return (
             <div>
             <Navbar dark color="primary">
