@@ -57,12 +57,11 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
                         <RenderDish dish={props.dish} />
                         <RenderComments comments={props.dish.comments} />
                     </div>
-                </div>
-                
+                </div>  
             );
         else
             return (
-                <div></div>
+                <div></div>                                     // render nothing
             );
     }
 

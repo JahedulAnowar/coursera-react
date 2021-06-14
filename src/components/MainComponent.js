@@ -1,7 +1,9 @@
 // import logo from './logo.svg';
-import { Navbar, NavbarBrand } from 'reactstrap';
+
 import Menu from './MenuComponent';
 import DishDetail from './DishDetailComponent';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 import { DISHES } from '../shared/dishes';
 import { Component } from 'react';
 
@@ -25,14 +27,11 @@ class Main extends Component {
     {
         return (
             <div>
-            <Navbar dark color="primary">
-                <div className="container">
-                <NavbarBrand href="/"> Ristorante con Fusion </NavbarBrand>
-                </div>
-            </Navbar>
-            <Menu dishes={this.state.dishes} 
-                onClick={(dishId) => this.onDishSelect(dishId)}/>                                                      {/*  pass */}
-            <DishDetail dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]}/>            {/* filter operates on each dish in the array and select first item(the only item)*/}            
+                <Header />
+                <Menu dishes={this.state.dishes} 
+                    onClick={(dishId) => this.onDishSelect(dishId)}/>                                                      {/*  pass */}
+                <DishDetail dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]}/>            {/* filter operates on each dish in the array and select first item(the only item)*/}            
+                <Footer />
             </div>
         );
     }  
